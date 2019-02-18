@@ -1,0 +1,21 @@
+#
+#  Brook is a cross-platform proxy/vpn software.
+#  Brook's goal is to keep it simple, stupid and not detectable.
+#
+#  https://github.com/txthinking/brook
+#  sudo setcap CAP_NET_BIND_SERVICE=+eip /opt/brook/brook
+#  /lib/systemd/system/brook.service
+
+[Unit]
+Description=Brook VPN Server Service
+After=network.target
+
+[Service]
+Type=simple
+User=nobody
+Group=nogroup
+LimitNOFILE=32768
+ExecStart=/opt/brook/brook server -l :443 -p StrongPass
+
+[Install]
+WantedBy=multi-user.target
