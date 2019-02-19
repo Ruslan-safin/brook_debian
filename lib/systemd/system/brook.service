@@ -15,7 +15,7 @@ Type=simple
 User=nobody
 Group=nogroup
 LimitNOFILE=32768
-ExecStart=/opt/brook/brook server -l :443 -p StrongPass
+ExecStart=/opt/brook/start.sh
 
 [Install]
 WantedBy=multi-user.target
